@@ -28,6 +28,8 @@
 
 4. Setup Laravel
    - Folder Structure:
+
    ![](system/system-design/images/folder_structure.png) 
    - Homepage Laravel
+   
    ![](system/system-design/images/laravel_homepage.png)
