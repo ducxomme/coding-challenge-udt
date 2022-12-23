@@ -1,1 +1,4 @@
 .idea/
+system/server/vendor/
+system/server/composer.lock
+**/.DS_Store
