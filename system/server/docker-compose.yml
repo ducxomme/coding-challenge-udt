@@ -1,0 +1,55 @@
+version: '3.5'
+
+volumes:
+  commercial:
+
+networks:
+  backend:
+    driver: bridge
+    name: backend
+
+services:
+  commercial-app:
+    build:
+      args:
+        user: userdata
+        uid: 1000
+      context: .
+      dockerfile: docker/php/Dockerfile
+    image: commercial/app:latest
+    container_name: commercial-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - backend
+  commercial-nginx:
+    image: nginx:1.17-alpine
+    platform: linux/x86_64
+    container_name: commercial-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - backend
+  mysql57:
+    image: mysql/mysql-server:5.7.12
+    platform: linux/x86_64
+    container_name: mysql57
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_USER: root
+      MYSQL_DATABASE: commercial
+    volumes:
+      - commercial:/var/lib/mysql
+      - ./docker/mysql57/conf:/etc/mysql/conf.d
+      - ./docker/mysql57:/docker-entrypoint-initdb.d
+      - ./docker/mysql57/logs:/var/log/mysql
+    networks:
+      - backend
