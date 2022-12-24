@@ -9,6 +9,10 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
+/**
+ * Class AgencyController
+ * @package App\Http\Controllers\API\V1
+ */
 final class AgencyController extends Controller
 {
     /**
