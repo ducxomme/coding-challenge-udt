@@ -20,7 +20,7 @@
 
    Ans: 
    - First, SQL databases are a better fit for heavy duty or complex transactions because it’s more stable and ensure data integrity -> Then I choose SQL over NoSQL
-   - Secondly, MySQL works natively with PHP and MySQL is an open-source, it's free to use. -> Then I choose SQL over NoSQL
+   - Secondly, MySQL works natively with PHP and MySQL is an open-source, it's free to use. -> Then I choose MySQL over SQLServer
     
 3. Setup docker-compose.yml to start database locally
 
