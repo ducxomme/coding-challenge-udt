@@ -10,6 +10,10 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
+/**
+ * Class ProductController
+ * @package App\Http\Controllers\API\V1
+ */
 final class ProductController extends Controller
 {
     /**
