@@ -42,3 +42,4 @@
    ![](system/system-design/images/database.png)
 
    5.2 APIs implementation
+   ![](system/system-design/images/APIs.png)
