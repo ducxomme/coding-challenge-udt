@@ -46,7 +46,7 @@ final class CustomerController extends Controller
      */
     public function get(Request $request): JsonResponse
     {
-        $customer = DB::table('customers')->find((int) $request->route('id'));
+        $customer = Customer::find((int) $request->route('id'));
 
         $result = [];
 
