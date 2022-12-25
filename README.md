@@ -48,3 +48,11 @@
 
 1. Authentication and authorize sequence diagram
    ![](system/system-design/images/authentication_sequence_diagram.png)
+2. Before implement these feature, let's update a bit database
+   
+   - Changed things:
+     - Add user_authentication to verify user.
+     - Add role table.
+     - Add access token table to store auth state.
+
+   ![](system/system-design/images/database-2.png)
