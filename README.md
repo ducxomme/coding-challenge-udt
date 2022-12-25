@@ -43,3 +43,8 @@
 
    5.2 APIs implementation
    ![](system/system-design/images/APIs.png)
+
+### Section 3
+
+1. Authentication and authorize sequence diagram
+   ![](system/system-design/images/authentication_sequence_diagram.png)
