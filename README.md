@@ -56,3 +56,10 @@
      - Add access token table to store auth state.
 
    ![](system/system-design/images/database-2.png)
+3. Strong and weak points of solution
+- Strong points:
+  - Every user has only one token to access the application.
+  - Every token has an expiration time -> low risk if a token leaked 
+- Weak points:
+  - Unless user have logged in, they have not a token to access.
+  - Every user have had only one role yet
