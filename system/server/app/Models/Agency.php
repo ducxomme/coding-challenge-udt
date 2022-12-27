@@ -24,6 +24,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Agency wherePhoneNumber($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Agency whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int|null $agency_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Agency whereAgencyId($value)
  */
 class Agency extends Model
 {

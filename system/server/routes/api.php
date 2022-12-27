@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
+// Authenticate
+Route::post('/v1/login', [\App\Http\Controllers\Api\V1\LoginController::class, 'login']);
+
 
 // Customer APIs
 Route::get('/v1/customers', [\App\Http\Controllers\Api\V1\CustomerController::class, 'list']);
