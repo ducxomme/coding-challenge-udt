@@ -44,7 +44,6 @@ final class CustomerController extends Controller
 
         return new JsonResponse([
             'data' => $result,
-            'a' => $request->get('role_id'),
         ]);
     }
 
