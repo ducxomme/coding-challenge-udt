@@ -17,10 +17,17 @@ use Mockery\Exception;
 final class CustomerController extends Controller
 {
     /**
+     * @param Request $request
      * @return JsonResponse
      */
-    public function list(): JsonResponse
+    public function list(Request $request): JsonResponse
     {
+        if ($request->get('role_id') !== 3) {
+            return new JsonResponse([
+                'message' => 'Unauthenticated',
+            ], 403);
+
+        }
         $customers = Customer::all();
 
         $result = [];
@@ -35,8 +42,9 @@ final class CustomerController extends Controller
             ];
         }
 
-        return new JsonResponse( [
+        return new JsonResponse([
             'data' => $result,
+            'a' => $request->get('role_id'),
         ]);
     }
 

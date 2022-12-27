@@ -23,7 +23,7 @@ Route::post('/v1/login', [\App\Http\Controllers\Api\V1\LoginController::class, '
 
 
 // Customer APIs
-Route::get('/v1/customers', [\App\Http\Controllers\Api\V1\CustomerController::class, 'list']);
+Route::get('/v1/customers', [\App\Http\Controllers\Api\V1\CustomerController::class, 'list'])->middleware('request');
 Route::get('/v1/customers/{id}', [\App\Http\Controllers\Api\V1\CustomerController::class, 'get']);
 Route::post('/v1/customers', [\App\Http\Controllers\Api\V1\CustomerController::class, 'create']);
 Route::put('/v1/customers/{id}', [\App\Http\Controllers\Api\V1\CustomerController::class, 'update']);
